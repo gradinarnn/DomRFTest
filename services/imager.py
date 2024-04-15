@@ -42,7 +42,11 @@ class Imager:
         :param path: директория для сохранения
         :param image_name: название файла
         """
+        if not os.path.isdir(path):
+            os.mkdir(path)
         path = os.path.abspath(os.path.join(path, f"{image_name}.jpg"))
+
+
 
         image.save(path, quality=95)
 
