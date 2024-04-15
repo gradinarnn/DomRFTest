@@ -46,8 +46,6 @@ class Imager:
             os.mkdir(path)
         path = os.path.abspath(os.path.join(path, f"{image_name}.jpg"))
 
-
-
         image.save(path, quality=95)
 
     @classmethod
