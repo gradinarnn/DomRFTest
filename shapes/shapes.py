@@ -20,6 +20,7 @@ class BaseShape(ABC):
         self.fill = self.__get_fill(**kwargs)
         image_y_size = kwargs.get("image_y_size")
         self.figure_xy = self.get_figure_xy(y_size=image_y_size)
+        self.outline = kwargs.get("outline", (0,0,0))
 
     def __get_fill(self, **kwargs):
         transparency = kwargs.get("transparency", None)
@@ -70,6 +71,7 @@ class Circle(BaseShape):
             self.figure_xy,
             fill=self.fill,
             width=self.width,
+            outline=self.outline
         )
 
 
@@ -109,6 +111,7 @@ class Rectangle(BaseShape):
             self.figure_xy,
             fill=self.fill,
             width=self.width,
+            outline=self.outline
         )
 
 
@@ -151,6 +154,7 @@ class Triangle(BaseShape):
             self.figure_xy,
             fill=self.fill,
             width=self.width,
+            outline=self.outline
         )
 
 
@@ -188,4 +192,5 @@ class Square(BaseShape):
             self.figure_xy,
             fill=self.fill,
             width=self.width,
+            outline=self.outline
         )
